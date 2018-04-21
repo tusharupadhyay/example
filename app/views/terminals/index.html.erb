@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Terminals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Type</th>
+      <th>Operating System<th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @terminals.each do |terminal| %>
+      <tr>
+        <td><%= terminal.name %></td>
+        <td><%= terminal.description %></td>
+        <td><%= terminal.type %></td>
+        <td><%= terminal.operating_system %></td>
+        <td><%= link_to 'Show', terminal %></td>
+        <td><%= link_to 'Edit', edit_terminal_path(terminal) %></td>
+        <td><%= link_to 'Destroy', terminal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Terminal', new_terminal_path %>
