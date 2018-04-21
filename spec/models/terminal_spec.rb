@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Terminal, type: :model do
   context 'validation tests' do
-    it 'ensures name is presence' do
+    it 'ensures name is present' do
       terminal  = Terminal.new(description: 'test terminal', type: 'Console Type', operating_system: 'windows')
       expect(terminal.valid?).to eq(false)
 
